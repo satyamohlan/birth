@@ -1,19 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const db = require('./config/keys').MongoUri;
-mongoose
-  .connect(db, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log('mongo db connected'))
-  .catch((err) => console.log(err));
 const app = express();
 const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
 app.use('/css', express.static('views/css'));
 app.use('/images', express.static('views/images'));
-app.use('/js', express.static('views/js'))
+app.use('/js', express.static('views/js'));
 app.get('/', (req, res) => res.render('index'));
 app.get('/bday', (req, res) => {
   let date = req.query.date;
@@ -39,11 +32,11 @@ app.get('/bday', (req, res) => {
   res.render('result', {
     age,
     birth,
-
   });
 });
 app.get('/countdown', (req, res) => {
   let date = req.query.date;
+  console.log(date);
   let bday = new Date(date);
   let today = new Date();
   let nbday = new Date(date);
@@ -66,7 +59,7 @@ app.get('/countdown', (req, res) => {
     (nextbday.time - (nextbday.time % 1000)) / 1000 -
     (nextbday.days * 24 * 60 + nextbday.hours * 60 + nextbday.minutes) * 60;
   res.json(nextbday);
-})
+});
 app.listen(port, () => console.log(`listening on port ${port}`));
 
 function day(date) {
