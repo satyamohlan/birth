@@ -1,0 +1,76 @@
+body {
+  background-color: #000;
+  margin: 0px;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+div.container {
+  width: 100vw;
+  height: 100vh;
+}
+
+div#got {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30vh;
+  align-self: center;
+  height: 100vh;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+div#got::after {
+  content: '';
+  z-index: -1;
+  background-image: url('../images/ss.jpg');
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#got h1,
+#got p {
+  font-weight: 100;
+}
+
+#got h1 {
+  font-size: 50px;
+}
+
+#got p {
+  font-size: 18px;
+}
+
+#got form {
+  position: relative;
+  top: 20px;
+  display: inline;
+  margin: 0px auto;
+}
+
+#bday {
+  width: 70vmin;
+  padding: 10px 20px;
+  border-radius: 3px 0px 0px 3px;
+  border: none;
+}
+
+.btn-info {
+  padding: 8px 20px;
+  position: relative;
+  bottom: 1px;
+  border-radius: 0px 3px 3px 0px;
+
+  font-size: 20px;
+}

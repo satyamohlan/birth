@@ -1,0 +1,50 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+div.container {
+  padding-top: 50px;
+}
+
+h1,
+h2,
+H3 {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 50px;
+}
+
+h2 {
+  font-weight: 100;
+  font-size: 40px;
+}
+
+div.slept {
+  padding-bottom: 30px;
+}
+
+.slept h3 {
+  position: relative;
+  bottom: 15px
+}
+
+.count H3 {
+  dISPLAY: GRID;
+  GRID-TEMPLATE-COLUMNS: 1FR 1FR 1FR 1FR;
+  WIDTH: MIN-CONTENT;
+  GAP: 20PX;
+  MARGIN: AUTO;
+  PADDING-TOP: 20PX;
+  align-items: center;
+}
