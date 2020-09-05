@@ -1,6 +1,23 @@
 body {
   margin: 0px;
   overflow: hidden;
+  background-color: black;
+  color: white;
+
+}
+
+body::after {
+  content: '';
+  z-index: -1;
+  background-image: url('../images/ss.jpg');
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 
 }
 
@@ -11,6 +28,8 @@ body {
 
 div.container {
   padding-top: 50px;
+  width: fit-content;
+
 }
 
 h1,
@@ -31,7 +50,8 @@ h2 {
 }
 
 div.slept {
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 5px;
 }
 
 .slept h3 {

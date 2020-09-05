@@ -1,6 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const db = require('./config/keys').MongoUri;
 const app = express();
 const port = process.env.PORT || 3000;
 app.set('view engine', 'ejs');
@@ -9,7 +7,13 @@ app.use('/images', express.static('views/images'));
 app.use('/js', express.static('views/js'));
 app.get('/', (req, res) => res.render('index'));
 app.get('/bday', (req, res) => {
+
   let date = req.query.date;
+  for (let i = 0; i < 5; i++) {
+    console.log(date);
+
+  }
+
   let bday = new Date(date);
   let today = new Date();
   var age = {};
@@ -36,7 +40,6 @@ app.get('/bday', (req, res) => {
 });
 app.get('/countdown', (req, res) => {
   let date = req.query.date;
-  console.log(date);
   let bday = new Date(date);
   let today = new Date();
   let nbday = new Date(date);
