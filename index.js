@@ -9,10 +9,6 @@ app.get('/', (req, res) => res.render('index'));
 app.get('/bday', (req, res) => {
 
   let date = req.query.date;
-  for (let i = 0; i < 5; i++) {
-    console.log(date);
-
-  }
 
   let bday = new Date(date);
   let today = new Date();
@@ -43,12 +39,16 @@ app.get('/countdown', (req, res) => {
   let bday = new Date(date);
   let today = new Date();
   let nbday = new Date(date);
-  nbday.setFullYear(today.getFullYear() + 1);
+  nbday.setFullYear(today.getFullYear());
   today.setHours(today.getHours() + 5, today.getMinutes() + 30);
 
   let nextbday = {};
-
   nextbday.time = nbday.getTime() - today.getTime();
+  if(nextbday.time<=0){
+    nbday.setFullYear(today.getFullYear()+1);
+    nextbday.time = nbday.getTime() - today.getTime();
+
+  }
   nextbday.days =
     (nextbday.time - (nextbday.time % (1000 * 60 * 60 * 24))) /
     (1000 * 60 * 60 * 24);
